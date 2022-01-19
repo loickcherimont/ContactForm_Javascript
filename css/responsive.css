@@ -1,0 +1,23 @@
+/* RESPONSIVE */
+@media screen and (max-width: 1000px) {
+    .contact {
+        margin: 10px;
+        height: auto;
+        grid-template-columns: 1fr ;
+        grid-template-rows: auto 1fr 1fr auto;
+        grid-template-areas: 
+        "contact-title"
+        "inputs-col1"
+        "inputs-col2"
+        "msg"
+        "footer";
+    }
+
+    .contact-title {
+        font-size: 1.3em;
+    }
+
+    .contact label, .btn{
+        font-size: 1em;
+    }
+}

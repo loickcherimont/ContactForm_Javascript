@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <!-- General CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive -->
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+      <!-- Contact form -->
+    <form action="app.php" method="post" class="contact" id="contact">
+        <!-- Header -->
+        <header class="contact-title">
+            <h1 class="title">Contact</h1>
+        </header>
+        <!-- Inputs from column 1 (Left) -->
+        <section class="inputs-col1 columns">
+            <!-- First name -->
+            <label for="fname">First name</label>
+            <input type="text" name="fname" id="fname" class="input" required>
+            <!-- Last name -->
+            <label for="lname">Last name</label>
+            <input type="text" name="lname" id="lname" class="input" required>
+        </section>
+        <!-- Inputs from column 2 (Right) -->
+        <section class="inputs-col2 columns">
+            <!-- Email address -->
+            <label for="mail">Email address</label>
+            <input type="email" name="mail" id="mail" class="input" required>
+            <!-- Phone number -->
+            <label for="">Phone number</label>
+            <input type="tel" name="phone" id="phone" class="input" required>
+        </section>
+        <!-- Message -->
+        <section class="msg">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" class="input" required></textarea>
+        </section>
+        <!-- Footer -->
+        <footer class="contact-footer">
+            <input type="submit" value="Submit" class="btn contact-submit" id="submit">
+            <input type="button" value="Cancel" class="btn contact-cancel" id="cancel">
+        </footer>
+    </form>
+    </div>
+    <!-- JavaScript code -->
+    <script src="app.js"></script>
+</body>
+</html>
