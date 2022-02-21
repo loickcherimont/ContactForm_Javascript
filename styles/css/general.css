@@ -1,0 +1,166 @@
+/* Reset CSS */
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* @font-face rules */
+@font-face {
+    font-family: "meticularegular";
+    src: url("../font/meticula-webfont.woff2") format("woff2"),
+         url("../font/meticula-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Body */
+body {
+    background-image: url("../../img/wave.png"), linear-gradient(135deg, rgb(51, 255, 87), #6495ED);
+    background-repeat: no-repeat;
+    background-position: left 100%;
+    background-size: 100%;
+    font-size: 100%;
+    width: 100%;
+    height:  100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "meticularegular", Helvetica, sans-serif;
+}
+
+
+
+/* Contact Form */
+.contact {
+    background-color: #fff;
+    box-shadow: 0 0 5px #555;
+    color: #333;
+    width: 500px;
+    height: auto;
+    border-radius: 25px;
+    padding: 20px;
+    font-family: "meticularegular", Helvetica, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2.5em 1fr 1fr 3em;
+    grid-gap: 20px;
+    grid-template-areas:
+    "contact-title contact-title"
+    "left-inputs right-inputs"
+    "message message"
+    "footer footer";
+}
+
+/* All inputs in contact */
+.contact .input {
+    margin: 5px;
+    font-size: 1em;
+    transition: background-color 0.5s, border 0.3s;
+    background-color: #e1e1e1;
+    outline: none;
+    border: none;
+}
+
+/* Inputs focused */
+.contact .input:focus {
+    border-color:#333;
+}
+
+/* Labels */
+.contact label {
+    font-size: 1.2em;
+    padding-left: 10px;
+    margin-top: 8px;
+}
+
+/* All inputs in each columns */
+.columns .input {
+    padding: 8px;
+    border-bottom: 3px solid #ccc;
+    background-color: transparent;
+}
+
+/* Grid items */
+.contact-title {
+    font-size: 1.5em;
+    grid-area: contact-title;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.left-inputs {
+    grid-area: left-inputs;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.right-inputs {
+    grid-area: right-inputs;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.message {
+    grid-area: message;
+    display: flex;
+    flex-direction: column;
+}
+
+.message .input {
+    border-radius: 5px;
+    padding: 1em;
+    height: 100px;
+    resize: none;
+    font-family: "meticularegular", Helvetica, sans-serif;
+}
+
+
+.contact-footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+}
+
+/* -- Buttons -- */
+.btn {
+    margin: 10px;
+    color: #fff;
+    flex-basis: 200px;
+    border-style: none;
+    font-size: 1em;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: "meticularegular", Helvetica, sans-serif;
+}
+
+.btn-submit {
+    background-image: linear-gradient(to right, rgb(51, 255, 87), #6495ED);
+}
+
+.btn-reset {
+    background-image: linear-gradient(to right, #ff8c00,#dc143c);
+}
+
+/* Non-valid form */
+.error-displayer {
+    color: #c81451;
+    position: absolute;
+    right: 8em;
+    font-weight: bolder;
+    list-style-type: none;
+    font-size: 1.3em;
+    padding: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 5px #555;
+    border-radius: 2em;
+    visibility: hidden;
+    box-shadow: 0 0 10px #c81451;
+}
+
+.error-displayer * {
+    margin: 5px; padding: 5px;
+}
