@@ -123,7 +123,7 @@ function checkEmail() {
 
 function checkPhoneNum() {
 
-    let pattern = /^\d{2} \d{2} \d{2} \d{2} \d{2}$/;;
+    let pattern = /^\d{2} \d{2} \d{2} \d{2} \d{2}$/;
 
     // Check phone
      if(phone.value === '') {
