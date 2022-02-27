@@ -5,53 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <!-- General CSS -->
+    <!-- General -->
+    <!-- And responsive rules -->
     <link rel="stylesheet" href="styles/css/general.css">
-    <!-- CSS responsive -->
     <link rel="stylesheet" href="styles/css/responsive.css">
 </head>
 <body>
       <!-- CONTACT FORM -->
-    <form method="POST" class="contact" id="contact" novalidate>
-        <!-- Header -->
+    <form method="POST" class="contact" id="contact" novalidate autocomplete="off">
+
         <header class="contact-title">
             <h1 class="title">Contact</h1>
         </header>
-        <!-- Left column inputs -->
+
         <section class="left-inputs columns">
+
             <!-- First name -->
             <label for="fname">First name</label>
             <input type="text" name="fname" id="fname" class="input">
+
             <!-- Last name -->
             <label for="lname">Last name</label>
             <input type="text" name="lname" id="lname" class="input">
+
         </section>
 
-        <!-- Right column inputs -->
         <section class="right-inputs columns">
+
             <!-- Email address -->
             <label for="mail">Email address</label>
             <input type="email" name="mail" id="mail" class="input">
+
             <!-- Phone number -->
             <label for="phone">Phone number</label>
             <input type="tel" name="phone" id="phone" class="input">
+
         </section>
-        <!-- Message -->
+
+        <!-- To write message -->
         <section class="message">
             <label for="message">Message</label>
             <textarea name="message" id="message" class="input"></textarea>
         </section>
-        <!-- Footer -->
+
+       <!-- Buttons -->
         <footer class="contact-footer">
             <input type="submit" value="Submit" class="btn btn-submit" id="submitBtn">
             <input type="reset" value="Reset" class="btn btn-reset" id="resetBtn">
         </footer>
     </form>
-    <!-- Dynamic error displayer -->
-    <ul class="error-displayer" id="errDisplay">
-    </ul>
-    <!-- JavaScript code -->
-<!--    <script src="js/app.js"></script>-->
-    <script src="js/app2.js"></script>
+    <script src="js/validation.js"></script>
 </body>
 </html>
