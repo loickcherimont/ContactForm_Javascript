@@ -8,8 +8,6 @@ client-side validation
 2. Open `index.html` in your favorite browser
 3. Here you are in the main page of the project
 
-![Contact form ScreenShot](C:\Users\pc\OneDrive\Bureau\contactForm_Screenshot.png)
-
 ## How does it turn
 Your are an user who want to join a company by  
 complete a contact form.
@@ -22,10 +20,10 @@ Javascript returns you an error message.
 *For email field*  
 
 ``` 
-user.name@hotmail.com   # :heavy_check_mark:
+user.name@hotmail.com   # Good entry
 ```
 
 ``` 
-username   # :x:
+username   # Bad entry
 ```
 
