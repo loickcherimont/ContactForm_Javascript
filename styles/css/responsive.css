@@ -20,4 +20,12 @@
     .contact label, .btn{
         font-size: 1em;
     }
+
+    .contact-footer {
+        flex-direction: column;
+    }
+
+    .contact-footer .btn {
+        flex-basis: 2.3em;
+    }
 }
