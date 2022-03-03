@@ -21,7 +21,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("../../img/wave.png"), linear-gradient(135deg, rgb(51, 255, 87), #6495ED);
+    background-image: url("../../assets/for-template/wave.png"), linear-gradient(135deg, rgb(51, 255, 87), #6495ED);
     background-repeat: no-repeat;
     background-position: left 100%;
     background-size: 100%;
