@@ -1,7 +1,7 @@
 # Contact form
-This is a **Front-End** project made with  
-HTML, CSS for design and JavaScript for  
-client-side validation
+This is a **Front-End** project made with HTML, CSS for design and JavaScript for  client-side validation (Constraint API)
+
+![Contact form](/assets/readme/contact-form.png)
 
 ## How to launch
 1. Download the project in your system
@@ -9,21 +9,12 @@ client-side validation
 3. Here you are in the main page of the project
 
 ## How does it turn
-Your are an user who want to join a company by  
-complete a contact form.
-Set the differents fields.  
-If your input is correct nothing special happens  
-but if your input is invalid by different manners
-Javascript returns you an error message.
+Fill the differents fields.  
+If your input is invalid by different manners Javascript returns you an error message.
 
-### Example:
-*For email field*  
+![Bad email format](/assets/readme/novalid-input.png)
 
-``` 
-user.name@hotmail.com   # Good entry
-```
-
-``` 
-username   # Bad entry
-```
+## TODO
+- Message when form is successful reset/submitted
+- Colored messages (green/red) to help user about validity of informations he/she entered
 
