@@ -1,4 +1,4 @@
-import { inputs } from "./components.js";
+import { inputs, userWizard } from "./components.js";
 
 
 /** CHECKERS */
@@ -10,7 +10,7 @@ import { inputs } from "./components.js";
  * Returns true if an input is empty
  * 
  * @param {HTMLCollection} inputs 
- * @returns {Boolean}
+ * @returns {boolean}
  */
 function isEmpty(inputs) {
 
@@ -29,7 +29,7 @@ function isEmpty(inputs) {
  * 
  * @param {HTMLElement} inputFname
  * @param {HTMLElement} inputLname
- * @returns {Boolean}
+ * @returns {boolean}
  */
 function checkNames(inputFname, inputLname) {
 
@@ -54,7 +54,7 @@ function checkNames(inputFname, inputLname) {
  * Returns true if not valid format
  * 
  * @param {HTMLElement} inputEmail
- * @returns {Boolean}
+ * @returns {boolean}
  */
 function emailValidity(inputEmail) { return inputEmail.validity.typeMismatch; } 
 
@@ -65,7 +65,7 @@ function emailValidity(inputEmail) { return inputEmail.validity.typeMismatch; }
  * Returns true if not valid
  * 
  * @param {HTMLElement} inputPhone
- * @returns {Boolean}
+ * @returns {boolean}
  */
 function phoneNumberValidity(inputPhone) {
 
@@ -91,33 +91,61 @@ function phoneNumberValidity(inputPhone) {
  * Returns true if not valid format
  * 
  * @param {SubmitEvent}
- * @returns {Boolean}
+ * @returns {boolean}
  */
 export function processing(e) {
     e.preventDefault();
 
-    if(isEmpty(inputs)) {
+    switch(true) {
+        case isEmpty(inputs):
+            // alert('All fields are required');
+            userWizard.innerText = 'All fields are required';
+            // return;
+            break;
+        case checkNames(inputs.fname, inputs.lname):
+            // alert('Only letters for First name and Last name!');
+            userWizard.innerText = 'Only letters for First name and Last name!';
+            break;
+        case emailValidity(inputs.mail):
+            // inputs.mail.setCustomValidity('Please enter a good format for email!');
+            // inputs.mail.reportValidity();
+            userWizard.innerText = 'Please enter a good format for email!';
+            // return;
+            break;
+        case phoneNumberValidity(inputs.phone):
+            // inputs.phone.setCustomValidity("Please enter a good format of phone number!");
+            // inputs.phone.reportValidity();
+            userWizard.innerText = 'Please enter a good format of phone number!';
 
-        alert('All fields are required');
-        return;
-
+            // return;
+            break;
+        default:
+            userWizard.innerText = '';
+            // alert("OK");
     }
 
-    if(checkNames(inputs.fname, inputs.lname)) {
-        alert('Only letters for First name and Last name!');
+    // if(isEmpty(inputs)) {
 
-    }
+    //     alert('All fields are required');
+    //     return;
 
-    if (emailValidity(inputs.mail)) {
-        inputs.mail.setCustomValidity('Please enter a good format for email!');
-        inputs.mail.reportValidity();
-        return;
-    }
+    // }
 
-    if (phoneNumberValidity(inputs.phone)) {
-        inputs.phone.setCustomValidity("Please enter a good format of phone number!");
-        inputs.phone.reportValidity();
-        return;
-    }
+    // if(checkNames(inputs.fname, inputs.lname)) {
+    //     alert('Only letters for First name and Last name!');
+
+    // }
+
+    // if (emailValidity(inputs.mail)) {
+    //     inputs.mail.setCustomValidity('Please enter a good format for email!');
+    //     inputs.mail.reportValidity();
+    //     return;
+    // }
+
+    // if (phoneNumberValidity(inputs.phone)) {
+    //     inputs.phone.setCustomValidity("Please enter a good format of phone number!");
+    //     inputs.phone.reportValidity();
+    //     return;
+    // }
 
 }
