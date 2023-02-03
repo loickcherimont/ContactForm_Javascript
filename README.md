@@ -22,6 +22,3 @@ If your input is invalid by different manners Javascript returns you an error me
 - Message when form is successful reset/submitted
 - Colored messages (green/red) to help user about validity of informations he/she entered
 
-## Credits
-*Last modification : 2023-02-02*
-
