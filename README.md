@@ -1,4 +1,4 @@
-# Contact form
+# Contact form v1.0.0
 This is a **Front-End** project made with HTML, CSS for design and JavaScript for  client-side validation (Constraint API)
 
 ![Contact form](/assets/readme/contact-form.png)
@@ -16,7 +16,6 @@ If your input is invalid by different manners Javascript returns you an error me
 
 ## TODO
 ### Priority
-- Reduce `processing` function
 - Allow only actual formats for phone number
 - Comment code
 ### Optional
