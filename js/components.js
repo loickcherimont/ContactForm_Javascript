@@ -1,4 +1,5 @@
-/**
- * @const {HTMLCollection} - All inputs from contact form
- */
+/** @const {HTMLCollection} - All inputs from contact form */
 export const inputs = document.getElementsByClassName('input');
+
+/** @const {HTMLElement} - Indicate erroneous fields */
+export const userWizard = document.getElementById('userWizard');
