@@ -1,7 +1,6 @@
-import { processing } from "./functions.js";
+import { contactForm } from "./components.js";
+import { preProcessing } from "./functions.js";
 
 /** Control fields before send to server */
-document
-    .forms['contact']
-    .addEventListener('submit', processing)
+contactForm.addEventListener('submit', preProcessing);
 
