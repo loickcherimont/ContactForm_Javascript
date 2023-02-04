@@ -1,4 +1,4 @@
-# Contact form v1.0.0
+# ContactForm_Javascript
 This is a **Front-End** project made with HTML, CSS for design and JavaScript for  client-side validation (Constraint API)
 
 ![Contact form](/assets/readme/contact-form.png)
@@ -16,9 +16,7 @@ If your input is invalid by different manners Javascript returns you an error me
 
 ## TODO
 ### Priority
-- Allow only actual formats for phone number
-- Comment code
-### Optional
-- Message when form is successful reset/submitted
-- Colored messages (green/red) to help user about validity of informations he/she entered
+- Project : Implement error handling
+- Docs : Rewrite `How to launch`
+
 
