@@ -1,4 +1,4 @@
-import { inputs, userWizard } from "./components.js";
+import { contactForm, inputs, userWizard } from "./components.js";
 
 
 /** CHECKERS */
@@ -82,10 +82,22 @@ function phoneNumberValidity(inputPhone) {
 
 }
 
+/** What to do with correct data */
+function sendData() {
+    const xhr = new XMLHttpRequest();
+    const FD = new FormData(contactForm);
+
+    xhr.addEventListener('load', () => alert('Submit!'));
+
+    /** @todo SERVER-SIDE : Send data to server, use Golang to do that */
+    xhr.open('POST', 'urlHandledByGolang'); 
+    xhr.send(FD);  
+}
+
 /** MAIN FUNCTION */
 
 /**
- * @function processing
+ * @function preProcessing
  * 
  * Verify email format
  * Returns true if not valid format
@@ -93,59 +105,24 @@ function phoneNumberValidity(inputPhone) {
  * @param {SubmitEvent}
  * @returns {boolean}
  */
-export function processing(e) {
+export function preProcessing(e) {
     e.preventDefault();
 
     switch(true) {
         case isEmpty(inputs):
-            // alert('All fields are required');
             userWizard.innerText = 'All fields are required';
-            // return;
             break;
         case checkNames(inputs.fname, inputs.lname):
-            // alert('Only letters for First name and Last name!');
             userWizard.innerText = 'Only letters for First name and Last name!';
             break;
         case emailValidity(inputs.mail):
-            // inputs.mail.setCustomValidity('Please enter a good format for email!');
-            // inputs.mail.reportValidity();
             userWizard.innerText = 'Please enter a good format for email!';
-            // return;
             break;
         case phoneNumberValidity(inputs.phone):
-            // inputs.phone.setCustomValidity("Please enter a good format of phone number!");
-            // inputs.phone.reportValidity();
             userWizard.innerText = 'Please enter a good format of phone number!';
-
-            // return;
             break;
         default:
-            userWizard.innerText = '';
-            // alert("OK");
+            userWizard.innerText = null;
+            sendData();
     }
-
-    // if(isEmpty(inputs)) {
-
-    //     alert('All fields are required');
-    //     return;
-
-    // }
-
-    // if(checkNames(inputs.fname, inputs.lname)) {
-    //     alert('Only letters for First name and Last name!');
-
-    // }
-
-    // if (emailValidity(inputs.mail)) {
-    //     inputs.mail.setCustomValidity('Please enter a good format for email!');
-    //     inputs.mail.reportValidity();
-    //     return;
-    // }
-
-    // if (phoneNumberValidity(inputs.phone)) {
-    //     inputs.phone.setCustomValidity("Please enter a good format of phone number!");
-    //     inputs.phone.reportValidity();
-    //     return;
-    // }
-
 }
