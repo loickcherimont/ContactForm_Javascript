@@ -19,4 +19,7 @@ If your input is invalid by different manners Javascript returns you an error me
 - Project : Implement error handling
 - Docs : Rewrite `How to launch`
 
+### Server-side
+- Future data handling with Golang/Node
+
 
