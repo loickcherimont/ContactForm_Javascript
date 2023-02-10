@@ -3,10 +3,10 @@ This is a **Front-End** project made with HTML, CSS for design and JavaScript fo
 
 ![Contact form](/assets/readme/contact-form.png)
 
-## How to launch
+<!-- ## How to launch
 1. Download the project in your system
 2. Open `index.html` in your favorite browser
-3. Here you are in the main page of the project
+3. Here you are in the main page of the project -->
 
 ## How does it turn
 Fill the differents fields.  
@@ -16,10 +16,14 @@ If your input is invalid by different manners Javascript returns you an error me
 
 ## TODO
 ### Priority
-- Project : Implement error handling
-- Docs : Rewrite `How to launch`
+- [x] Project : Implement error handling
+- [ ] ReDesign : Use Bootstrap to style the project
+- [ ] Docs : Rewrite `How to launch` in `README.md`
 
-### Server-side
-- Future data handling with Golang/Node
+### Optional
+- Structure directories, files and codelines
+
+<!-- ### Server-side
+- Future data handling with Golang/Node -->
 
 
