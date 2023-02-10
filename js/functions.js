@@ -7,29 +7,27 @@ import { contactForm, inputs, userWizard } from "./components.js";
  * @function isEmpty
  * 
  * Verify if user filled all inputs
- * Returns true if an input is empty
+ * Else throw error
  * 
  * @param {HTMLCollection} inputs 
- * @returns {boolean}
  */
 function isEmpty(inputs) {
 
     for(const input of inputs) {
-        if(!input.value) return true;
+        if(!input.value) {
+            throw new Error('Empty field : One or more fields not filled!');
+        }
     }
-
-    return false;
 }
 
 /**
  * @function checkNames
  * 
  * Verify first and last names format
- * Returns true if an input is not valid
+ * Throw error if not valid
  * 
  * @param {HTMLElement} inputFname
  * @param {HTMLElement} inputLname
- * @returns {boolean}
  */
 function checkNames(inputFname, inputLname) {
 
@@ -42,30 +40,34 @@ function checkNames(inputFname, inputLname) {
     /** Authorized characters */
     namesRegex = /^[a-zA-Z-]+$/;
 
-    validNames = namesRegex.test(fnameValue) && namesRegex.test(lnameValue)
+    validNames = namesRegex.test(fnameValue) && namesRegex.test(lnameValue);
 
-    return !validNames;
+    if(!validNames) {
+        throw new Error('Wrong format : Only letters for `name` fields!');
+    }
 }
 
 /**
  * @function emailValidity
  * 
  * Verify email format
- * Returns true if not valid format
+ * Throw error if wrong
  * 
  * @param {HTMLElement} inputEmail
- * @returns {boolean}
  */
-function emailValidity(inputEmail) { return inputEmail.validity.typeMismatch; } 
+function emailValidity(inputEmail) {
+    if(inputEmail.validity.typeMismatch) {
+        throw new Error('Wrong format : Please enter a good format for email!');
+    }
+} 
 
 /**
  * @function phoneNumberValidity
  * 
  * Verify phone number format
- * Returns true if not valid
+ * Throw error if not OK
  * 
  * @param {HTMLElement} inputPhone
- * @returns {boolean}
  */
 function phoneNumberValidity(inputPhone) {
 
@@ -77,8 +79,9 @@ function phoneNumberValidity(inputPhone) {
     /** Max size : 10 */
     phoneRegex = /^\d{10}$/;
     validPhone = phoneRegex.test(phoneValue);
-
-    return !validPhone;
+    if(!validPhone) {
+        throw new Error('Wrong format : Please enter a good format of phone number!');
+    }
 
 }
 
@@ -99,8 +102,9 @@ function sendData() {
 /**
  * @function preProcessing
  * 
- * Verify email format
- * Returns true if not valid format
+ * Verify field validity
+ * Throw indication to user 
+ * If empty field or wrong data format 
  * 
  * @param {SubmitEvent}
  * @returns {boolean}
@@ -108,21 +112,15 @@ function sendData() {
 export function preProcessing(e) {
     e.preventDefault();
 
-    switch(true) {
-        case isEmpty(inputs):
-            userWizard.innerText = 'All fields are required';
-            break;
-        case checkNames(inputs.fname, inputs.lname):
-            userWizard.innerText = 'Only letters for First name and Last name!';
-            break;
-        case emailValidity(inputs.mail):
-            userWizard.innerText = 'Please enter a good format for email!';
-            break;
-        case phoneNumberValidity(inputs.phone):
-            userWizard.innerText = 'Please enter a good format of phone number!';
-            break;
-        default:
-            userWizard.innerText = null;
-            sendData();
+    try {
+        isEmpty(inputs);
+        checkNames(inputs.fname, inputs.lname);
+        emailValidity(inputs.mail);
+        phoneNumberValidity(inputs.phone);
+        userWizard.innerText = null;
+        sendData();
+    } catch(customError) {
+        userWizard.innerText = customError.message;
     }
+    
 }
