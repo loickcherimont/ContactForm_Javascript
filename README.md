@@ -18,6 +18,8 @@ If your input is invalid by different manners Javascript returns you an error me
 ### Priority
 - [x] Project : Implement error handling
 - [ ] ReDesign : Use Bootstrap to style the project
+  - [ ] Connect `utils` files with files from project root
+  - [ ] Fix responsive
 - [ ] Docs : Rewrite `How to launch` in `README.md`
 
 ### Optional
