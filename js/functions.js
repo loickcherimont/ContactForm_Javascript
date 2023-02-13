@@ -18,6 +18,9 @@ function isEmpty(inputs) {
             throw new Error('Empty field : One or more fields not filled!');
         }
     }
+
+    
+    // userWizard.classList.add('d-none');
 }
 
 /**
@@ -37,7 +40,7 @@ function checkNames(inputFname, inputLname) {
     fnameValue = inputFname.value;
     lnameValue = inputLname.value;
 
-    /** Authorized characters */
+    /** Authorized characters : only letters */
     namesRegex = /^[a-zA-Z-]+$/;
 
     validNames = namesRegex.test(fnameValue) && namesRegex.test(lnameValue);
@@ -85,17 +88,18 @@ function phoneNumberValidity(inputPhone) {
 
 }
 
+/** @todo SERVER-SIDE : Send data to server, use Golang to do that */
 /** What to do with correct data */
-function sendData() {
-    const xhr = new XMLHttpRequest();
-    const FD = new FormData(contactForm);
+// function sendData() {
+//     const xhr = new XMLHttpRequest();
+//     const FD = new FormData(contactForm);
 
-    xhr.addEventListener('load', () => alert('Submit!'));
+//     xhr.addEventListener('load', () => alert('Submit!'));
 
-    /** @todo SERVER-SIDE : Send data to server, use Golang to do that */
-    xhr.open('POST', 'urlHandledByGolang'); 
-    xhr.send(FD);  
-}
+    
+//     xhr.open('POST', 'urlHandledByGolang'); 
+//     xhr.send(FD);  
+// }
 
 /** MAIN FUNCTION */
 
@@ -113,14 +117,21 @@ export function preProcessing(e) {
     e.preventDefault();
 
     try {
-        isEmpty(inputs);
+        isEmpty(inputs); 
         checkNames(inputs.fname, inputs.lname);
         emailValidity(inputs.mail);
         phoneNumberValidity(inputs.phone);
+
+        /**
+     * Remove error message
+     * If all fields are filled
+     */
         userWizard.innerText = null;
+        userWizard.classList.add('d-none');
         sendData();
     } catch(customError) {
         userWizard.innerText = customError.message;
+        userWizard.classList.remove('d-none');
     }
     
 }
