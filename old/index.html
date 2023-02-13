@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <!-- General -->
+    <!-- And responsive rules -->
+    <link rel="stylesheet" href="styles/css/general.css">
+    <link rel="stylesheet" href="styles/css/responsive.css">
+</head>
+<body>
+
+      <!-- CONTACT FORM -->
+    <form method='POST' class="contact" id="contact" novalidate autocomplete="off">
+
+        <!-- Place to display error messages! -->
+        <div id="userWizard" style="color:red;"></div>
+
+        <header class="contact-title">
+            <h1 class="title">Contact</h1>
+        </header>
+
+        <section class="left-inputs columns">
+
+            <!-- First name -->
+            <label for="fname">First name</label>
+            <input type="text" name="fname" id="fname" class="input">
+
+            <!-- Last name -->
+            <label for="lname">Last name</label>
+            <input type="text" name="lname" id="lname" class="input">
+
+        </section>
+
+        <section class="right-inputs columns">
+
+            <!-- Email address -->
+            <label for="mail">Email address</label>
+            <input type="email" name="mail" id="mail" class="input">
+
+            <!-- Phone number -->
+            <label for="phone">Phone number</label>
+            <input type="tel" name="phone" id="phone" class="input">
+
+        </section>
+
+        <!-- To write message -->
+        <section class="message">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" class="input"></textarea>
+        </section>
+
+       <!-- Buttons -->
+        <footer class="contact-footer">
+            <input type="submit" value="Submit" class="btn btn-submit" id="submitBtn">
+            <input type="reset" value="Reset" class="btn btn-reset" id="resetBtn">
+        </footer>
+    </form>
+    <script src="js/validation.js" type="module"></script>
+</body>
+</html>
