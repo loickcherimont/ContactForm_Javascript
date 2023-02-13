@@ -16,10 +16,7 @@ If your input is invalid by different manners Javascript returns you an error me
 
 ## TODO
 ### Priority
-- [x] Project : Implement error handling
-- [ ] ReDesign : Use Bootstrap to style the project
-  - [ ] Connect `utils` files with files from project root
-  - [ ] Fix responsive
+- [ ] Fix responsive : Establish vertical template for small screens
 - [ ] Docs : Rewrite `How to launch` in `README.md`
 
 ### Optional
@@ -27,5 +24,13 @@ If your input is invalid by different manners Javascript returns you an error me
 
 <!-- ### Server-side
 - Future data handling with Golang/Node -->
+
+<!-- ### New Features
+#### Phone
+- Indicate number of digits to reach 10
+#### First/Last names
+- Allow french alphabet
+- Give min/max length for names
+ -->
 
 
