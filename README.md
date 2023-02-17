@@ -3,25 +3,25 @@ This is a **Front-End** project made with HTML, CSS for design and JavaScript fo
 
 ![Contact form](/assets/readme/contact-form.png)
 
-<!-- ## How to launch
-1. Download the project in your system
-2. Open `index.html` in your favorite browser
-3. Here you are in the main page of the project -->
+## Tools
+- Javascript
+- Bootstrap 5
+
+### Prerequisites
+You need a web server to run this app!
+
+### How to launch
+1. Download and extract the project on your local host
+2. Run it and here you are in the main page of the app
 
 ## How does it turn
 Fill the differents fields.  
-If your input is invalid by different manners Javascript returns you an error message.
+If your input is invalid (wrong value or null) by different manners Javascript returns you an error message.
 
-![Bad email format](/assets/readme/novalid-input.png)
+![Empty fields](/assets/readme/not-valid-inputs.png)
 
-## TODO
-### Priority
-- [ ] Fix responsive : Establish vertical template for small screens
-- [ ] Docs : Rewrite `How to launch` in `README.md`
-
-### Optional
-- Structure directories, files and codelines
-
+<!-- ## TODO -->
+<!-- - Rewrite documentation using NodeJS/Git -->
 <!-- ### Server-side
 - Future data handling with Golang/Node -->
 
