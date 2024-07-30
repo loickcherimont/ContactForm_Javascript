@@ -25,12 +25,31 @@ If your input is invalid (wrong value or null) by different manners Javascript r
 <!-- ### Server-side
 - Future data handling with Golang/Node -->
 
-<!-- ### New Features
-#### Phone
-- Indicate number of digits to reach 10
-#### First/Last names
-- Allow french alphabet
-- Give min/max length for names
+### New Features
+- Develop the back-end side with Golang 
+
+
+<!-- FEATURES -->
+ <!--
+ 
+ /** @todo SERVER-SIDE : Send data to server, use Golang to do that */
+/** What to do with correct data */
+// function sendData() {
+//     const xhr = new XMLHttpRequest();
+//     const FD = new FormData(contactForm);
+
+//     xhr.addEventListener('load', () => alert('Submit!'));
+
+    
+//     xhr.open('POST', 'urlHandledByGolang'); 
+//     xhr.send(FD);  
+// }
+ 
  -->
+
+ <!-- do not use "npx http-server" for this project
+ 
+ There is a problem!
+  -->
 
 
