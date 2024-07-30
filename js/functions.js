@@ -18,9 +18,6 @@ function isEmpty(inputs) {
             throw new Error('Empty field : One or more fields not filled!');
         }
     }
-
-    
-    // userWizard.classList.add('d-none');
 }
 
 /**
@@ -88,19 +85,6 @@ function phoneNumberValidity(inputPhone) {
 
 }
 
-/** @todo SERVER-SIDE : Send data to server, use Golang to do that */
-/** What to do with correct data */
-// function sendData() {
-//     const xhr = new XMLHttpRequest();
-//     const FD = new FormData(contactForm);
-
-//     xhr.addEventListener('load', () => alert('Submit!'));
-
-    
-//     xhr.open('POST', 'urlHandledByGolang'); 
-//     xhr.send(FD);  
-// }
-
 /** MAIN FUNCTION */
 
 /**
@@ -128,8 +112,16 @@ export function preProcessing(e) {
      */
         userWizard.innerText = null;
         userWizard.classList.add('d-none');
-        sendData();
+
+        // GOLANG -- beginning 
+        // ⚠️⚠️⚠️ DO NOT CLEAN THAT ⚠️⚠️⚠️
+        // Simulate a submit
+        // Temporary remplacement until back-end feature
+        alert("😉 Thank you! Your form has been sent with success ✅!");
+        // GOLANG -- end
+        contactForm.reset();
     } catch(customError) {
+        console.error(customError)
         userWizard.innerText = customError.message;
         userWizard.classList.remove('d-none');
     }
