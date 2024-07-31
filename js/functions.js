@@ -1,5 +1,32 @@
 import { contactForm, inputs, userWizard } from "./components.js";
 
+/**
+ * @function copyrightProject
+ * 
+ * Add a footer containing 
+ * The copyright for this project 
+ * 
+ */
+export function copyrightProject() {
+
+    // Fetch the main place
+    // To store the copyright
+    const app = document.getElementById("app");
+    const date = new Date();
+
+    const footer = document.createElement("footer");
+    const p = document.createElement("p");
+
+    // To update automatically year
+    p.innerHTML = `&copy; ${date.getFullYear()} - Loick Cherimont`;
+
+    // Style paragraph element
+    p.classList.add("text-center","text-white")
+
+    // Add the footer and its content to the DOM
+    footer.appendChild(p);
+    app.appendChild(footer);
+}
 
 /** CHECKERS */
 
@@ -121,7 +148,6 @@ export function preProcessing(e) {
         // GOLANG -- end
         contactForm.reset();
     } catch(customError) {
-        console.error(customError)
         userWizard.innerText = customError.message;
         userWizard.classList.remove('d-none');
     }
